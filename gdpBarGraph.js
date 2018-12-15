@@ -62,7 +62,7 @@ d3.csv("gdp.csv", function(error,data) {
   the data will be in number format, but when in doubt use "+" to avoid issues.
   ----------------------------------------------------------------------------*/
   data.forEach(function(d) {
-    d.country = d.country;
+    d.Απόβλητα = d.Απόβλητα;
     d.gdp = +d.gdp;       // try removing the + and see what the console prints
     console.log(d.gdp);   // use console.log to confirm
   });
@@ -73,7 +73,7 @@ d3.csv("gdp.csv", function(error,data) {
   });
 
   // Specify the domains of the x and y scales
-  xScale.domain(data.map(function(d) { return d.country; }) );
+  xScale.domain(data.map(function(d) { return d.Απόβλητα; }) );
   yScale.domain([0, d3.max(data, function(d) { return d.gdp; } ) ]);
 
   svg.selectAll('rect')
@@ -86,7 +86,7 @@ d3.csv("gdp.csv", function(error,data) {
     .delay( function(d,i) { return i * 200; })
     // attributes can be also combined under one .attr
     .attr({
-      "x": function(d) { return xScale(d.country); },
+      "x": function(d) { return xScale(d.Απόβλητα); },
       "y": function(d) { return yScale(d.gdp); },
       "width": xScale.rangeBand(),
       "height": function(d) { return  height - yScale(d.gdp); }
