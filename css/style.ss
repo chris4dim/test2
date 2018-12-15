@@ -13,7 +13,6 @@
   text-anchor: middle;
 }
 
-
 .arc2 path {
   stroke: #fff;
 }
